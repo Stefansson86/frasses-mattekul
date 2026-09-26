@@ -22,35 +22,34 @@ export function generateProblem(mode: GameMode, max: DifficultyLevel, previousId
   let answer: number;
 
   if (operator === '+') {
-    // Addition: answer <= max
-    // Avoid trivial 0 + 0 most of the time
-    answer = Math.floor(Math.random() * max) + 1; // 1 to max
-    num1 = Math.floor(Math.random() * (answer + 1));
-    num2 = answer - num1;
+    // Addition: num1 >= 1, num2 >= 1, answer <= max (inga nollor)
+    answer = Math.floor(Math.random() * (max - 1)) + 2; // 2 till max
+    num1 = Math.floor(Math.random() * (answer - 1)) + 1; // 1 till answer - 1
+    num2 = answer - num1; // 1 till answer - 1
   } else {
-    // Subtraktion: num1 - num2 = answer >= 0
-    num1 = Math.floor(Math.random() * max) + 1; // 1 to max
-    num2 = Math.floor(Math.random() * (num1 + 1));
-    answer = num1 - num2;
+    // Subtraktion: num1 >= 2, num2 >= 1, answer >= 1 (inga nollor)
+    num1 = Math.floor(Math.random() * (max - 1)) + 2; // 2 till max
+    num2 = Math.floor(Math.random() * (num1 - 1)) + 1; // 1 till num1 - 1
+    answer = num1 - num2; // >= 1
   }
 
   // Number of options: 3 when max is 5, 4 when max is 10
   const totalOptions = max === 5 ? 3 : 4;
   const distractors = new Set<number>();
 
-  // Prefer realistic nearby distractors first
+  // Prefer realistic nearby distractors first (mellan 1 och max)
   const candidates = [answer - 1, answer + 1, answer - 2, answer + 2, answer + 3, answer - 3];
   for (const c of candidates) {
-    if (c >= 0 && c <= (operator === '+' ? max : num1) && c !== answer) {
+    if (c >= 1 && c <= max && c !== answer) {
       distractors.add(c);
       if (distractors.size >= totalOptions - 1) break;
     }
   }
 
-  // If still need more, pick any valid number in range
+  // If still need more, pick any valid number in range 1..max
   let attempts = 0;
-  while (distractors.size < totalOptions - 1 && attempts < 20) {
-    const randomNum = Math.floor(Math.random() * (max + 1));
+  while (distractors.size < totalOptions - 1 && attempts < 25) {
+    const randomNum = Math.floor(Math.random() * max) + 1; // 1 till max
     if (randomNum !== answer) {
       distractors.add(randomNum);
     }

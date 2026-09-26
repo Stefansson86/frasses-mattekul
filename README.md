@@ -7,8 +7,8 @@ En enkel, minimalistisk och pedagogisk matte-webapp för **Frans (5 år)** som �
 - ⚽ **Fotbollstema**: Skjut bollen i mål vid rätt svar med jubel, nät-rassel och "MÅÅÅL!"
 - ➕➖ **Plus & Minus**: Välj mellan addition, subtraktion eller blandad match.
 - 🟢 **Anpassat för 5 år**:
-  - **Nivå 0–5 (Lätt)**: Perfekt för att börja räkna på fingrarna och med bollar.
-  - **Nivå 0–10 (Klurigt)**: För när Frans vill utmana sig själv.
+  - **Nivå 1–5 (Lätt)**: Perfekt för att börja räkna på fingrarna och med bollar (inga nollor).
+  - **Nivå 1–10 (Klurigt)**: För när Frans vill utmana sig själv.
 - 🖐️ **Togglingsbar räknehjälp**: Klickbara fotbollar som studsar och räknas när Frans pekar på skärmen. Kan stängas av eller sättas på med ett enkelt klick för att träna huvudräkning!
 - 🔊 **Goda ljudeffekter**: Bollspark, måljubel och domarvissla (utan talsyntes/röst). Går även att stänga av helt med ljudknappen.
 - 🏆 **Pokalskåp & Målstatistik**: 5 mål ger en matchseger och en pokal i Frans prishylla (sparas i webbläsarens `localStorage`).

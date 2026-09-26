@@ -58,9 +58,9 @@ export const Header: React.FC<HeaderProps> = ({
               ? 'bg-emerald-400 text-emerald-950 shadow-sm'
               : 'text-emerald-300/70 hover:text-white'
           }`}
-          title="Nivå 0 till 5 (Lättare)"
+          title="Nivå 1 till 5 (Lättare)"
         >
-          0–5
+          1–5
         </button>
         <button
           onClick={() => handleLevelChange(10)}
@@ -69,9 +69,9 @@ export const Header: React.FC<HeaderProps> = ({
               ? 'bg-emerald-400 text-emerald-950 shadow-sm'
               : 'text-emerald-300/70 hover:text-white'
           }`}
-          title="Nivå 0 till 10 (Klurigare)"
+          title="Nivå 1 till 10 (Klurigare)"
         >
-          0–10
+          1–10
         </button>
       </div>
 
