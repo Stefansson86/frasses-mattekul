@@ -166,22 +166,20 @@ export const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-950 via-emerald-900 to-green-950 text-white flex flex-col justify-between py-2 sm:py-4">
       <div className="w-full">
-        {/* Header med Frans profil, pokaler och ljudeffektsknapp */}
+        {/* Header med Frans profil, svårighetsgrad (0-5 / 0-10), pokaler och ljud */}
         <Header
           stats={stats}
+          level={level}
+          setLevel={setLevel}
           soundOn={soundOn}
           setSoundOn={setSoundOn}
           onOpenTrophies={() => setIsTrophyCabinetOpen(true)}
         />
 
-        {/* Läges- & nivåväljare + Räknehjälpstoggle */}
+        {/* Lägesväljare (Plus, Minus, Mix) */}
         <ModeSelector
           mode={mode}
           setMode={setMode}
-          level={level}
-          setLevel={setLevel}
-          showHelper={showHelper}
-          setShowHelper={setShowHelper}
         />
 
         {/* Fotbollsmål och mattetal */}

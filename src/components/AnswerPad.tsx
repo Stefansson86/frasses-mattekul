@@ -18,9 +18,9 @@ export const AnswerPad: React.FC<AnswerPadProps> = ({
   disabled,
 }) => {
   return (
-    <div className="w-full max-w-md mx-auto px-4 mt-2 mb-4">
+    <div className="w-full max-w-md mx-auto px-3 sm:px-4 mt-2 mb-3">
       <div
-        className={`grid gap-3 ${
+        className={`grid gap-2 sm:gap-3 ${
           options.length === 3 ? 'grid-cols-3' : 'grid-cols-2 sm:grid-cols-4'
         }`}
       >
@@ -35,7 +35,7 @@ export const AnswerPad: React.FC<AnswerPadProps> = ({
               type="button"
               disabled={disabled || isWrong}
               onClick={() => onSelect(opt)}
-              className={`h-20 sm:h-24 rounded-3xl font-extrabold text-3xl sm:text-4xl flex flex-col items-center justify-center transition-all duration-200 active:scale-95 shadow-md border-3 select-none ${
+              className={`h-16 sm:h-22 rounded-2xl sm:rounded-3xl font-extrabold text-2xl sm:text-4xl flex flex-col items-center justify-center transition-all duration-200 active:scale-95 shadow-md border-2 sm:border-3 select-none ${
                 isCorrect
                   ? 'bg-gradient-to-b from-green-400 to-emerald-600 text-white border-white scale-105 shadow-emerald-500/50'
                   : isWrong
@@ -44,7 +44,7 @@ export const AnswerPad: React.FC<AnswerPadProps> = ({
               }`}
             >
               <span>{opt}</span>
-              <span className="text-xs font-semibold text-emerald-800/70 -mt-1">
+              <span className="text-[10px] sm:text-xs font-semibold text-emerald-800/70 -mt-0.5">
                 {isCorrect ? '⚽ MÅL!' : 'skjut!'}
               </span>
             </button>
