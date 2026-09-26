@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Fredoka', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@keyframes kickBall {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  30% {
+    transform: translate(10px, -40px) scale(1.1) rotate(180deg);
+  }
+  70% {
+    transform: translate(0, -90px) scale(0.85) rotate(540deg);
+  }
+  100% {
+    transform: translate(0, -110px) scale(0.7) rotate(720deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes netShake {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.04) translateY(-3px); }
+  50% { transform: scale(0.98) translateY(2px); }
+  75% { transform: scale(1.02) translateY(-1px); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-kick {
+  animation: kickBall 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-net {
+  animation: netShake 0.6s ease-in-out;
+}
+
+.animate-pop {
+  animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-float {
+  animation: floatGentle 2.5s ease-in-out infinite;
+}

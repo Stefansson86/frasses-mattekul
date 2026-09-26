@@ -1,0 +1,8 @@
+{
+  "name": "Frasses Mattekul",
+  "description": "En enkel, minimalistisk och lekfull matteapp på svenska i gröna toner för Frans (5 år) som älskar fotboll. Träna plus och minus med fotbollar och gör mål!",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
